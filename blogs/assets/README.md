@@ -18,7 +18,7 @@
 
   <a href="https://harry1414.hashnode.dev/the-internet-unplugged-how-your-cat-videos-travel-the-world-in-a-flash">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/1.png">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/1a.png">
     <p>
   </a>
 
@@ -28,7 +28,7 @@
 
   <a href="https://harry1414.hashnode.dev/html-for-beginners-building-the-skeleton-of-a-webpage">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/2.png">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/2a.png">
     <p> 
   </a>
 
@@ -38,7 +38,7 @@
 
   <a href="https://harry1414.hashnode.dev/mastering-javascript-the-art-of-debouncing-and-throttling-for-optimal-performance">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/3.png">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/3a.png">
     <p>
   </a>
 
@@ -48,21 +48,37 @@
 
   <a href="https://harry1414.hashnode.dev/jwt-authentication-in-nodejs-a-practical-guide">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/4.png">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/4a.png">
     <p>
   </a>
 
 <br>
+
+</br>
 
 ### [Using Prisma as an ORM in Node.js for SQL Databases](https://harry1414.hashnode.dev/using-prisma-nodejs-sql-databases)
 
   <a href="https://harry1414.hashnode.dev/using-prisma-nodejs-sql-databases">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/5.png">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/5a.png">
     <p>
   </a>
 
 <br>
+
+</br>
+
+### [REST API Design Made Simple with Express.js](https://harry1414.hashnode.dev/rest-api-design-made-simple-with-expressjs)
+
+  <a href="https://harry1414.hashnode.dev/rest-api-design-made-simple-with-expressjs">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/6a.png">
+    <p>
+  </a>
+
+<br>
+
+
 
 ## Contributing
 
