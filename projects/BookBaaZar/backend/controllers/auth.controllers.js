@@ -1,19 +1,18 @@
-import express from "express";
+
 import jwt from "jsonwebtoken";
-import dotenv from "dotenv";
-// import {User ,API,Book ,Review,Order} from "../models/schema.js";
 import schema from "../models/schema.js";
 const { User, API, Book, Review, Order } = schema;
 import nodemailer from "nodemailer";
 import crypto from "crypto";
-import bcrypt from "bcryptjs";
-import { error } from "console";
+
+
+
 
 
 const registerUser = async (req, res) => {
 
   const { name, email, password, username } = req.body;
-  if ( !email || !password || !username) {
+  if (!email || !password || !username) {
     return res.status(400).json({
       message: "All fields are required",
     });
@@ -45,7 +44,7 @@ const registerUser = async (req, res) => {
     const token = crypto.randomBytes(32).toString("hex");
     user.verificationToken = token;
     await user.save();
-    
+
 
 
     //send email ,basically its called a transporter
@@ -70,13 +69,13 @@ const registerUser = async (req, res) => {
       `,
     };
 
-    await transporter.sendMail(mailOption ,(error, info) => {
-  if (error) {
-    console.log('Error:', error);
-  } else {
-    console.log('Email sent:', info.response);
-  }
-});
+    await transporter.sendMail(mailOption, (error, info) => {
+      if (error) {
+        console.log('Error:', error);
+      } else {
+        console.log('Email sent:', info.response);
+      }
+    });
 
     res.status(201).json({
       message: "User registered successfully",
@@ -93,62 +92,117 @@ const registerUser = async (req, res) => {
   }
 };
 
-export const loginUser = async (req , res)=>{
-    const {email , password} = req.body;
+export const loginUser = async (req, res) => {
+  const { email, password } = req.body;
 
-    try {
-        const user = await User.findOne({email})
-        console.log(user);
-        
+  try {
+    const user = await User.findOne({ email })
+    console.log(user);
 
-        if(!user){
-            return res.status(401).json({
-                error:"User not found"
-            })
-        }
 
-        const isMatch = await password === user.password;
-        console.log(user.password);
-        console.log(password);
-        
-
-        if(!isMatch){
-            return res.status(401).json({
-                error:`Invalid credentials`
-            })
-        }
-
-        const token = jwt.sign({id:user.id} , process.env.JWT_SECRET_KEY,{
-            expiresIn:"7d"
-        })
-
-        res.cookie("jwt" , token , {
-            httpOnly:true,
-            sameSite:"strict",
-            secure:process.env.NODE_ENV !== "development",
-            maxAge:1000 * 60 * 60 * 24 * 7 // 7 days
-        })
-
-        res.status(200).json({
-            success:true,
-            message:"User Logged in successfully",
-            user:{
-                id:user.id,
-                email:user.email,
-                name:user.name,
-                role:user.role,
-                
-            }
-        })
-
-        
-    } catch (error) {
-        console.error("Error creating user:", error);
-        res.status(500).json({
-            error:"Error logging in user"
-        })
+    if (!user) {
+      return res.status(401).json({
+        error: "User not found"
+      })
     }
+
+    const isMatch = await password === user.password;
+    console.log(user.password);
+    console.log(password);
+
+
+    if (!isMatch) {
+      return res.status(401).json({
+        error: `Invalid credentials`
+      })
+    }
+
+    const token = jwt.sign(
+      { id: user._id, role: user.role },
+
+      process.env.JWT_SECRET_KEY,
+      {
+        expiresIn: "24h",
+      }
+    );
+
+
+
+    const cookieOptions = {
+      httpOnly: true,
+      secure: process.env.NODE_ENV !== "development" ? true : false,
+      maxAge: 24 * 60 * 60 * 1000,
+    };
+    res.cookie("token", token, cookieOptions);
+
+
+    res.status(200).json({
+      success: true,
+      message: "Login successful",
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        role: user.role,
+      },
+    });
+
+
+  } catch (error) {
+    console.error("Error creating user:", error);
+    res.status(500).json({
+      error: "Error logging in user"
+    })
+  }
 }
+
+export const aboutMe = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select("-password");
+    console.log(user);
+
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    console.log("Error in get me", error);
+  }
+};
+
+
+export const generateApiKey = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    const apiKey = crypto.randomBytes(32).toString("hex");
+    
+
+
+    const user = await User.findById(userId);
+    user.apiKey = apiKey;
+    await user.save();
+
+    res.status(200).json({
+      success: true,
+      message: "API Key generated",
+      apiKey: apiKey,
+    });
+  } catch (error) {
+    console.error("API key generation failed:", error.message);
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
 
 
 

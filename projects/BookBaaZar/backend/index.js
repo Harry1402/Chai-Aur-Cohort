@@ -4,6 +4,9 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import { Router } from 'express';
+import cookieParser from 'cookie-parser';
+
+
 
 
 //customimports
@@ -22,6 +25,8 @@ app.use(cors());
 app.use(express.json()); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser()); // This should be before routes
+
 
 
 app.get("/",(req,res)=>{
