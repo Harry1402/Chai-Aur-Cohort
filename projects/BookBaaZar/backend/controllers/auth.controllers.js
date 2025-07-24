@@ -1,7 +1,7 @@
 
 import jwt from "jsonwebtoken";
 import schema from "../models/schema.js";
-const { User, API, Book, Review, Order } = schema;
+const { User, Book, Review, Order } = schema;
 import nodemailer from "nodemailer";
 import crypto from "crypto";
 

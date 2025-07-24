@@ -15,20 +15,15 @@ const userSchema = new mongoose.Schema({
 });
 const User = mongoose.model("User", userSchema);
 
-const Api_keys = new mongoose.Schema({
-    key: { type: String, required: true },
-    createdAt: { type: Date, default: Date.now }
-});
-const API = mongoose.model("API", Api_keys);
 
 const bookSchema = new mongoose.Schema({
   title: { type: String, required: true },
-  author: String,
-  description: String,
-  price: Number,
-  category: String,
-  stock: Number,
-  imageUrl: String,
+  author:  { type: String,},
+  price: { type: Number}  ,
+  description: {type:String},
+  category: { type: String },
+  stock:  { type :Number},
+  imageUrl: {type: String},
   createdAt: { type: Date, default: Date.now }
 });
 const Book = mongoose.model("Book", bookSchema);
@@ -57,6 +52,6 @@ const orderSchema = new mongoose.Schema({
 });
 const Order =mongoose.model("Order", orderSchema);
 
-const schema =  { User,API, Book, Review, Order };
+const schema =  { User, Book, Review, Order };
 export default schema;
 

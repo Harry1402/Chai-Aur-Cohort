@@ -34,8 +34,8 @@ app.get("/",(req,res)=>{
 })
 
 app.use("/v1",authRouts);
-app.use("/orders",Orders);
 app.use("/books",Books);
+app.use("/orders",Orders);
 app.use("/reviews",Reviews);
 
 
