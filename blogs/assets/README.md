@@ -80,6 +80,18 @@
 
 
 
+### [How to Create Forms in HTML a beginers guide](https://harry1414.hashnode.dev/how-to-create-forms-in-html-a-beginners-guide)
+
+  <a href="https://harry1414.hashnode.dev/how-to-create-forms-in-html-a-beginners-guide">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/7a.png">
+    <p>
+  </a>
+
+<br>
+
+
+
 ## Contributing
 
 Contributions are always welcome!
