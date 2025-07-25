@@ -18,7 +18,7 @@
 
   <a href="https://harry1414.hashnode.dev/the-internet-unplugged-how-your-cat-videos-travel-the-world-in-a-flash">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/1a.png">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/1a-banner.png">
     <p>
   </a>
 
