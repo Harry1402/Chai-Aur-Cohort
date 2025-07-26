@@ -13,8 +13,6 @@ const userSchema = new mongoose.Schema({
     default: null,
   },
 });
-const User = mongoose.model("User", userSchema);
-
 
 const bookSchema = new mongoose.Schema({
   title: { type: String, required: true },
@@ -26,16 +24,14 @@ const bookSchema = new mongoose.Schema({
   imageUrl: {type: String},
   createdAt: { type: Date, default: Date.now }
 });
-const Book = mongoose.model("Book", bookSchema);
 
 const reviewSchema = new mongoose.Schema({
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User"  ,required: true},
   bookId: { type: mongoose.Schema.Types.ObjectId, ref: "Book" },
   rating: { type: Number, min: 1, max: 5 },
   comment: String,
   createdAt: { type: Date, default: Date.now }
 });
-const Review = mongoose.model("Review", reviewSchema);
 
 const orderSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
@@ -46,11 +42,21 @@ const orderSchema = new mongoose.Schema({
       price: Number
     }
   ],
+  
+  shippingAddress: {
+    city: {type: String, required: true},
+    zip: {type: String, required: true},
+    street: {type: String, required: true},
+  },
+  
   totalAmount: Number,
   status: { type: String, enum: ["pending", "completed", "cancelled"], default: "pending" },
   createdAt: { type: Date, default: Date.now }
 });
+const User = mongoose.model("User", userSchema);
 const Order =mongoose.model("Order", orderSchema);
+const Review = mongoose.model("Review", reviewSchema);
+const Book = mongoose.model("Book", bookSchema);
 
 const schema =  { User, Book, Review, Order };
 export default schema;

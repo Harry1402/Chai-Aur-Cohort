@@ -10,10 +10,10 @@ import cookieParser from 'cookie-parser';
 
 
 //customimports
-import authRouts from './Routes/Auth_and_API.js';
-import Orders from './Routes/Orders.js';
-import Books from './Routes/Book_Routes.js';
-import Reviews from './Routes/Reviews.js';
+import authRouts from './Routes/Auth_and_API.routes.js';
+import Orders from './Routes/Orders.route.js';
+import Books from './Routes/Book_Routes.routes.js';
+import Reviews from './Routes/Reviews.route.js';
 import db from './utils/db.js';
 
 const router = express.Router();
@@ -36,7 +36,7 @@ app.get("/",(req,res)=>{
 app.use("/v1",authRouts);
 app.use("/books",Books);
 app.use("/orders",Orders);
-app.use("/reviews",Reviews);
+app.use("/review",Reviews);
 
 
 db();
