@@ -5,13 +5,12 @@ const { Book, User } = schema;
 import jwt from 'jsonwebtoken';
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());  // This parses JSON body from requests
-
+app.use(express.json()); // This parses JSON body from requests
 
 export const addBooks = async (req, res) => {
   try {
     const token = req.cookies.token;
-    if (!token) return res.status(401).json({ message: "Unauthorized" });
+    if (!token) return res.status(401).json({ message: 'Unauthorized' });
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
     const userId = decoded.id;
@@ -29,20 +28,22 @@ export const addBooks = async (req, res) => {
 
     // Optional: Validate fields
     if (!title || !author || !price) {
-      return res.status(400).json({ message: 'Please provide title, author, and price.' });
+      return res
+        .status(400)
+        .json({ message: 'Please provide title, author, and price.' });
     }
 
     const newBook = new Book({ title, author, price });
     await newBook.save();
 
-    return res.status(201).json({ message: "Book added successfully", book: newBook });
-
+    return res
+      .status(201)
+      .json({ message: 'Book added successfully', book: newBook });
   } catch (err) {
     console.error(err);
-    return res.status(500).json({ message: "Server Error" });
+    return res.status(500).json({ message: 'Server Error' });
   }
 };
-
 
 export const getBookById = async (req, res) => {
   try {
@@ -50,29 +51,28 @@ export const getBookById = async (req, res) => {
     const book = await Book.findById(bookId); // Mongoose method
 
     if (!book) {
-      return res.status(404).json({ message: "Book not found" });
+      return res.status(404).json({ message: 'Book not found' });
     }
 
     res.status(200).json(book);
   } catch (error) {
-    res.status(500).json({ message: "Server error", error: error.message });
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
-
 
 export const getAllBooks = async (req, res) => {
   try {
     const books = await Book.find(); // no filters
     res.status(200).json(books);
   } catch (error) {
-    res.status(500).json({ message: "Server error", error: error.message });
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
 
 export const updateBook = async (req, res) => {
   try {
     const token = req.cookies.token;
-    if (!token) return res.status(401).json({ message: "Unauthorized" });
+    if (!token) return res.status(401).json({ message: 'Unauthorized' });
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
     const userId = decoded.id;
@@ -94,20 +94,19 @@ export const updateBook = async (req, res) => {
     });
 
     if (!updatedBook) {
-      return res.status(404).json({ message: "Book not found" });
+      return res.status(404).json({ message: 'Book not found' });
     }
 
-    res.status(200).json(
-      { message: "Book updated successfully", updatedBook });
+    res.status(200).json({ message: 'Book updated successfully', updatedBook });
   } catch (error) {
-    res.status(500).json({ message: "Server error", error: error.message });
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
 
 export const deleteBookByID = async (req, res) => {
   try {
-     const token = req.cookies.token;
-    if (!token) return res.status(401).json({ message: "Unauthorized" });
+    const token = req.cookies.token;
+    if (!token) return res.status(401).json({ message: 'Unauthorized' });
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
     const userId = decoded.id;
@@ -124,11 +123,11 @@ export const deleteBookByID = async (req, res) => {
     const deletedBook = await Book.findByIdAndDelete(bookId);
 
     if (!deletedBook) {
-      return res.status(404).json({ message: "Book not found" });
+      return res.status(404).json({ message: 'Book not found' });
     }
 
-    res.status(200).json({ message: "Book deleted successfully" });
+    res.status(200).json({ message: 'Book deleted successfully' });
   } catch (error) {
-    res.status(500).json({ message: "Server error", error: error.message });
+    res.status(500).json({ message: 'Server error', error: error.message });
   }
 };

@@ -1,20 +1,14 @@
-
-import jwt from "jsonwebtoken";
-import schema from "../models/schema.js";
+import jwt from 'jsonwebtoken';
+import schema from '../models/schema.js';
 const { User, Book, Review, Order } = schema;
-import nodemailer from "nodemailer";
-import crypto from "crypto";
-
-
-
-
+import nodemailer from 'nodemailer';
+import crypto from 'crypto';
 
 const registerUser = async (req, res) => {
-
   const { name, email, password, username } = req.body;
   if (!email || !password || !username) {
     return res.status(400).json({
-      message: "All fields are required",
+      message: 'All fields are required',
     });
   }
 
@@ -22,7 +16,7 @@ const registerUser = async (req, res) => {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({
-        message: "User already exists",
+        message: 'User already exists',
       });
     }
 
@@ -35,17 +29,13 @@ const registerUser = async (req, res) => {
 
     if (!username) {
       return res.status(400).json({
-        message: "User not registered",
-
-
+        message: 'User not registered',
       });
     }
 
-    const token = crypto.randomBytes(32).toString("hex");
+    const token = crypto.randomBytes(32).toString('hex');
     user.verificationToken = token;
     await user.save();
-
-
 
     //send email ,basically its called a transporter
     const transporter = nodemailer.createTransport({
@@ -63,7 +53,7 @@ const registerUser = async (req, res) => {
       // service: 'Gmail',
       from: process.env.MAILTRAP_SENDEREMAIL,
       to: user.email,
-      subject: "Verify your email", // Subject line
+      subject: 'Verify your email', // Subject line
       text: `Please click on the following link:
       ${process.env.BASE_URL}/api/v1/users/verify/${token}
       `,
@@ -78,14 +68,13 @@ const registerUser = async (req, res) => {
     });
 
     res.status(201).json({
-      message: "User registered successfully",
+      message: 'User registered successfully',
       success: true,
     });
-
   } catch (error) {
     console.error(error);
     res.status(400).json({
-      message: "User not registered ",
+      message: 'User not registered ',
       error: error.message,
       success: false,
     });
@@ -96,25 +85,23 @@ export const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email })
+    const user = await User.findOne({ email });
     console.log(user);
-
 
     if (!user) {
       return res.status(401).json({
-        error: "User not found"
-      })
+        error: 'User not found',
+      });
     }
 
-    const isMatch = await password === user.password;
+    const isMatch = (await password) === user.password;
     console.log(user.password);
     console.log(password);
 
-
     if (!isMatch) {
       return res.status(401).json({
-        error: `Invalid credentials`
-      })
+        error: `Invalid credentials`,
+      });
     }
 
     const token = jwt.sign(
@@ -122,23 +109,20 @@ export const loginUser = async (req, res) => {
 
       process.env.JWT_SECRET_KEY,
       {
-        expiresIn: "24h",
-      }
+        expiresIn: '24h',
+      },
     );
-
-
 
     const cookieOptions = {
       httpOnly: true,
-      secure: process.env.NODE_ENV !== "development" ? true : false,
+      secure: process.env.NODE_ENV !== 'development' ? true : false,
       maxAge: 24 * 60 * 60 * 1000,
     };
-    res.cookie("token", token, cookieOptions);
-
+    res.cookie('token', token, cookieOptions);
 
     res.status(200).json({
       success: true,
-      message: "Login successful",
+      message: 'Login successful',
       token,
       user: {
         id: user._id,
@@ -146,25 +130,23 @@ export const loginUser = async (req, res) => {
         role: user.role,
       },
     });
-
-
   } catch (error) {
-    console.error("Error creating user:", error);
+    console.error('Error creating user:', error);
     res.status(500).json({
-      error: "Error logging in user"
-    })
+      error: 'Error logging in user',
+    });
   }
-}
+};
 
 export const aboutMe = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select("-password");
+    const user = await User.findById(req.user.id).select('-password');
     console.log(user);
 
     if (!user) {
       return res.status(400).json({
         success: false,
-        message: "User not found",
+        message: 'User not found',
       });
     }
 
@@ -173,18 +155,15 @@ export const aboutMe = async (req, res) => {
       user,
     });
   } catch (error) {
-    console.log("Error in get me", error);
+    console.log('Error in get me', error);
   }
 };
-
 
 export const generateApiKey = async (req, res) => {
   try {
     const userId = req.user.id;
 
-    const apiKey = crypto.randomBytes(32).toString("hex");
-    
-
+    const apiKey = crypto.randomBytes(32).toString('hex');
 
     const user = await User.findById(userId);
     user.apiKey = apiKey;
@@ -192,18 +171,16 @@ export const generateApiKey = async (req, res) => {
 
     res.status(200).json({
       success: true,
-      message: "API Key generated",
+      message: 'API Key generated',
       apiKey: apiKey,
     });
   } catch (error) {
-    console.error("API key generation failed:", error.message);
+    console.error('API key generation failed:', error.message);
     res.status(500).json({
       success: false,
-      message: "Server Error",
+      message: 'Server Error',
     });
   }
 };
-
-
 
 export { registerUser };
