@@ -90,6 +90,18 @@
 
 <br>
 
+<br>
+
+### [Understanding Flexbox: Aligning and Distributing Items Easily](https://harry1414.hashnode.dev/understanding-flexbox-aligning-and-distributing-items-easily)
+
+  <a href="https://harry1414.hashnode.dev/understanding-flexbox-aligning-and-distributing-items-easily">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/8a.png">
+    <p>
+  </a>
+
+<br>
+
 
 
 ## Contributing
