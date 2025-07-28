@@ -102,6 +102,18 @@
 
 <br>
 
+<br>
+
+### [Understanding the CSS Box Model: Margins, Borders, and Padding](https://harry1414.hashnode.dev/understanding-the-css-box-model-margins-borders-and-padding)
+
+  <a href="https://harry1414.hashnode.dev/understanding-the-css-box-model-margins-borders-and-padding">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/9a.png">
+    <p>
+  </a>
+
+<br>
+
 
 
 ## Contributing
