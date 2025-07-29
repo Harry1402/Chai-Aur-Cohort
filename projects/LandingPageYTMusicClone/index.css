@@ -1,0 +1,15 @@
+.bg-red {
+  background-color: #e53d00; /* custom blue */
+}
+.bg-blue {
+  background-color: #046865;
+}
+.bg-yellow {
+  background-color: #ffe900;
+}
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+
