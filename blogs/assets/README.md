@@ -136,6 +136,18 @@
 
 <br>
 
+<br>
+
+### [Understanding Variables and Data Types in JavaScript](https://harry1414.hashnode.dev/understanding-javascript-variables-and-data-types)
+
+  <a href="https://harry1414.hashnode.dev/understanding-javascript-variables-and-data-types">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/11a.png">
+    <p>
+  </a>
+
+<br>
+
 ## Contributing
 
 Contributions are always welcome!
