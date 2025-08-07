@@ -148,6 +148,17 @@
 
 <br>
 
+<br>
+
+### [Understanding the JavaScript DOM: A Beginner’s Guide to the Document Object Model](https://harry1414.hashnode.dev/understanding-the-javascript-dom-a-beginners-guide-to-the-document-object-model)
+
+  <a href="https://harry1414.hashnode.dev/understanding-the-javascript-dom-a-beginners-guide-to-the-document-object-model">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/12a.png">
+    <p>
+  </a>
+
+<br>
 ## Contributing
 
 Contributions are always welcome!
