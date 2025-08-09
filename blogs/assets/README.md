@@ -150,7 +150,7 @@
 
 <br>
 
-### [Understanding the JavaScript DOM: A Beginner’s Guide to the Document Object Model](https://harry1414.hashnode.dev/understanding-the-javascript-dom-a-beginners-guide-to-the-document-object-model)
+### [Understanding the JavaScript DOM: A Beginner’s Guide to the Document Object Model ]()
 
   <a href="https://harry1414.hashnode.dev/understanding-the-javascript-dom-a-beginners-guide-to-the-document-object-model">
       <p align=center>
@@ -159,9 +159,8 @@
   </a>
 
 <br>
-## Contributing
-
-Contributions are always welcome!
+## Contributing..
+Contributions are always welcome!   
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) for ways to get started.
 </br></br>
