@@ -119,7 +119,7 @@
 
   <a href="https://harry1414.hashnode.dev/function-declaration-vs-function-expression-whats-the-difference">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/11a.png">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="/assets/11a.png">
     <p>
   </a>
 
