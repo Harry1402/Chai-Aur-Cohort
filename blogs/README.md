@@ -18,7 +18,7 @@
 
   <a href="https://harry1414.hashnode.dev/the-internet-unplugged-how-your-cat-videos-travel-the-world-in-a-flash">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/1a-banner.png">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="assets/1a-banner.png">
     <p>
   </a>
 
@@ -28,11 +28,11 @@
 
   <a href="https://harry1414.hashnode.dev/html-for-beginners-building-the-skeleton-of-a-webpage">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/2a.png">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="assets/2a.png">
     <p> 
   </a>
 
-<br>
+<br>.
 
 ### [Mastering JavaScript: The Art of Debouncing and Throttling for Optimal Performance](https://harry1414.hashnode.dev/mastering-javascript-the-art-of-debouncing-and-throttling-for-optimal-performance)
 
