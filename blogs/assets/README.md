@@ -112,17 +112,6 @@
 
 <br>
 
-<br>
-
-### [How to Use the Java Collections Framework – A Guide for Developers](https://data-structur-and-algorithmjava.hashnode.dev/how-to-use-the-java-collections-framework-a-guide-for-developers)
-
-  <a href="https://data-structur-and-algorithmjava.hashnode.dev/how-to-use-the-java-collections-framework-a-guide-for-developers">
-      <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/10a.png">
-    <p>
-  </a>
-
-<br>
 
 <br>
 
