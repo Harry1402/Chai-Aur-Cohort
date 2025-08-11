@@ -148,6 +148,18 @@
   </a>
 
 <br>
+
+<br>
+
+### [The Prototype Chain in JavaScript: Understanding Inheritance and Object Lookup ]()
+
+  <a href="https://harry1414.hashnode.dev/the-prototype-chain-in-javascript-understanding-inheritance-and-object-lookup">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/13a.png">
+    <p>
+  </a>
+
+<br>
 ## Contributing..
 Contributions are always welcome!   
 
