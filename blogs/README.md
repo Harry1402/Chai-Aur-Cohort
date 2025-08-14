@@ -161,7 +161,7 @@
 
 <br>
 ## Contributing..
-Contributions are always welcome!   
+Contributions are always welcome! Welcome  
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) for ways to get started.
 </br></br>
