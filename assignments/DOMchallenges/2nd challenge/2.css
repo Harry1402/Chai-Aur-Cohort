@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+h1 {
+  transition: color 0.3s ease;
+}
+.color-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+#redButton {
+  background-color: #dd6b5f;
+}
+#greenButton {
+  background-color: #6ccd95;
+}
+#blueButton {
+  background-color: #66a1c8;
+}
+#purpleButton {
+  background-color: #bc87d1;
+}
+#resetButton {
+  background-color: #34495e;
+}

@@ -23,4 +23,3 @@ toogleButton.addEventListener("click", () => {
 
 })
 
-// function to toggle btw dark and light mode 
