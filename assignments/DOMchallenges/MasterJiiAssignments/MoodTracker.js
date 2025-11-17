@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-   
+
     const moodButtons = document.querySelectorAll('.mood-btn');
     const noteInput = document.getElementById('note');
     const saveButton = document.getElementById('save-btn');
@@ -11,18 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedMood = null;
 
     const moods = ['happy', 'sad', 'angry', 'tired', 'excited'];
-    const savedMood = localStorage.getItem('mood'); 
-    const savedNote = localStorage.getItem('note'); 
-    const savedDate = localStorage.getItem('date'); 
+    const savedMood = localStorage.getItem('mood');
+    const savedNote = localStorage.getItem('note');
+    const savedDate = localStorage.getItem('date');
     const today = new Date().toLocaleDateString();
 
 
     if (savedDate === today) {
 
         if (savedMood) {
-            todayMood.innerHTML = `Your mood: <span>${savedMood}</span>`; 
-            body.classList.remove(...moods); 
-            body.classList.add(savedMood); 
+            todayMood.innerHTML = `Your mood: <span>${savedMood}</span>`;
+            body.classList.remove(...moods);
+            body.classList.add(savedMood);
         }
 
         if (savedNote) {
@@ -45,9 +45,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
             body.classList.remove(...moods);
             body.classList.add(selectedMood);
-            
+
         });
     });
 
-    
+
+    saveButton.addEventListener('click', () => {
+        if (!selectedMood) {
+            alert('Please select a mood.'); 
+            return;
+        }
+
+        const note = noteInput.value;
+
+        localStorage.setItem('mood', savedMood);
+        localStorage.setItem('date', today);
+        localStorage.setItem('note', note)
+
+         todayMood.innerHTML = `Your mood: <span>${selectedMood}</span>`;
+
+         saveMessage.textContent = "Your mood has been saved!";
+        saveMessage.classList.remove('hidden'); 
+
+
+    })
+
 });
