@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mood Tracker - Track your daily mood</title>
+    <link rel="stylesheet" href="MoodTracker.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Mood Tracker</h1>
+        <p>Track your daily mood: With Our Mood Tracking App</p>
+
+        <div class="mood-selector">
+            <button class="mood-btn" data-mood="happy">😊</button>
+            <button class="mood-btn" data-mood="sad">😢</button>
+            <button class="mood-btn" data-mood="angry">😠</button>
+            <button class="mood-btn" data-mood="tired">😴</button>
+            <button class="mood-btn" data-mood="excited">😃</button>
+        </div>
+
+        <textarea id="note" placeholder="Add a note..."></textarea>
+
+        <button id="save-btn">Save</button>
+
+        <h2>Your mood today</h2>
+        <div id="today-mood"></div>
+
+        <div id="save-message" class="hidden"></div>
+
+    </div>
+    <script src="MoodTracker.js"></script>
+
+</body>
+
+</html>
