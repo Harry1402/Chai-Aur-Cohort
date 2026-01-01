@@ -160,6 +160,19 @@
   </a>
 
 <br>
+
+
+<br>
+
+### [Setting Up Your First Node.js App Step-by-Step]()
+
+  <a href="https://harry1414.hashnode.dev/setting-up-your-first-nodejs-app-step-by-step">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/14a.png">
+    <p>
+  </a>
+
+<br>
 ## Contributing..
 Contributions are always welcome! Welcome  
 
