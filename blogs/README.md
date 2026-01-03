@@ -185,6 +185,18 @@ br>
   </a>
 
 <br>
+
+br>
+
+### [Understanding the Virtual DOM and JSX]()
+
+  <a href="https://aboutreact.hashnode.dev/understanding-the-virtual-dom-and-jsx?showSharer=true">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/16a.jpg">
+    <p>
+  </a>
+
+<br>
 ## Contributing..
 Contributions are always welcome! Welcome  
 
