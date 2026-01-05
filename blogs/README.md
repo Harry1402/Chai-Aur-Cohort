@@ -201,7 +201,7 @@ br>
 
   <a href="https://aboutreact.hashnode.dev/understanding-react-hooks-the-usestate-and-useeffect-fundamentals?showSharer=true">
       <p align=center>
-      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/17a.jpg">
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/17a.jpg" >
     <p>
   </a>
 
