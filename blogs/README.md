@@ -206,6 +206,16 @@ br>
   </a>
 
 <br>
+
+### [Domain Name System (DNS)]()
+
+  <a href="https://harry1414.hashnode.dev/domain-name-system-dns?showSharer=true">
+      <p align=center>
+      <img width = "500px" alt="Jio Network blocking the view? Network switch reveals the magic!" src="./assets/" >
+    <p>
+  </a>
+
+<br>
 ## Contributing..
 Contributions are always welcome! Welcome
 
